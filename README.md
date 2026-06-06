@@ -1,126 +1,83 @@
-# 🌱 FundRaise — Crowdfunding Console App
+# Python Crowd Funding Console App
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/mohammed-hamdi26/python-Crowd-Funding-console-app)
 
-> A Python-based console application for launching and managing crowdfunding campaigns, inspired by the global crowdfunding movement that raised over **$34 billion** worldwide in 2015.
+## About The Project
 
----
+This is a simple, console-based application for managing crowd-funding projects. It provides a command-line interface (CLI) for users to register, log in, and perform full CRUD (Create, Read, Update, Delete) operations on their funding campaigns. All user and project data is persisted locally using JSON files.
 
-## 📖 About the Project
+## Features
 
-Crowdfunding is the practice of funding a project or venture by raising small amounts of money from a large number of people, typically via the Internet. **FundRaise** brings this concept to life as a fully interactive console application where users can register, log in, and manage their own fundraising campaigns.
+*   **User Authentication**: Securely register a new account and log in. User sessions are managed for the duration of the application's runtime.
+*   **Project Management**:
+    *   **Create**: Add new crowd-funding projects with a title, description, total target, start date, and end date.
+    *   **View**: Display a formatted list of all projects created by the currently logged-in user.
+    *   **Update**: Modify the details of an existing project.
+    *   **Delete**: Remove a project from the system.
+*   **Data Persistence**: All data is saved to and loaded from local `json` files, ensuring data is not lost between sessions.
+*   **Input Validation**: The application validates email formats and Egyptian mobile phone numbers upon registration to ensure data integrity.
 
----
+## Getting Started
 
-## ✨ Features
-
-### 🔐 Authentication System
-
-#### Registration
-New users can create an account by providing:
-- First name & Last name
-- Email address
-- Password & Confirm password
-- Mobile phone number *(validated Egyptian phone numbers only)*
-
-#### Login
-- Registered users can log in using their **email and password**
-- Access is granted only after account activation
-
----
-
-### 📋 Project Management
-
-Once logged in, users can:
-
-| Feature | Description |
-|---|---|
-| ➕ Create a Project | Launch a new fundraising campaign |
-| 👁️ View All Projects | Browse all active campaigns |
-| ✏️ Edit a Project | Modify your own campaigns |
-| 🗑️ Delete a Project | Remove your own campaigns |
-| 🔍 Search by Date | *(Bonus)* Find campaigns by start/end date |
-
-#### Each campaign includes:
-- **Title** — Campaign name
-- **Details** — Full description of the project
-- **Total Target** — Funding goal (e.g. `250,000 EGP`)
-- **Start Date** — Campaign start date *(validated format)*
-- **End Date** — Campaign end date *(validated format)*
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Python 3.x
-- **Interface:** Console / CLI
-- **Storage:** File-based or in-memory (no external database required)
-
----
-
-## 🚀 Getting Started
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
-- Python 3.x installed on your machine
 
-### Installation
+*   Python 3.x installed on your system.
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/fundraise-app.git
+### Installation & Usage
 
-# Navigate to the project directory
-cd fundraise-app
+1.  Clone the repository to your local machine:
+    ```sh
+    git clone https://github.com/mohammed-hamdi26/python-crowd-funding-console-app.git
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd python-crowd-funding-console-app
+    ```
+3.  Run the application from your terminal:
+    ```sh
+    python main.py
+    ```
 
-# Run the application
-python main.py
+## How It Works
+
+Upon starting the application, you are greeted with the main menu where you can either log in or register a new account.
+
+```
+Welcome to the Project Management System!
+==========================================
+1. Login
+2. Register
+Enter your choice:
 ```
 
----
-
-## 📁 Project Structure
+After a successful login, you gain access to the project management dashboard, allowing you to manage your crowd-funding campaigns.
 
 ```
-fundraise-app/
-│
-├── main.py               # Entry point
-├── auth/
-│   ├── register.py       # Registration logic
-│   └── login.py          # Login logic
-├── projects/
-│   ├── create.py         # Create a campaign
-│   ├── view.py           # View all campaigns
-│   ├── edit.py           # Edit a campaign
-│   ├── delete.py         # Delete a campaign
-│   └── search.py         # Search by date (bonus)
-├── utils/
-│   ├── validators.py     # Phone, email, date validation
-│   └── helpers.py        # Shared utilities
-└── data/
-    └── users.json        # Stored user data
+1. Create Project
+2. View Projects
+3. Update Project
+4. Delete Project
+5. Logout
+6. Exit
+Enter your choice:
 ```
 
----
+## Project Structure
 
-## ✅ Validation Rules
+The codebase is organized to separate concerns, making it modular and easy to understand.
 
-- **Egyptian Phone Numbers** — Must match the format: `01[0125][0-9]{8}`
-- **Email** — Must follow standard email format
-- **Passwords** — Must match during registration
-- **Dates** — Must follow `YYYY-MM-DD` format; end date must be after start date
-
----
-
-## 👥 Contributors
-
-| Name | Role |
-|---|---|
-| Your Name | Developer |
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-> *"The secret to getting ahead is getting started."* — Mark Twain
+```
+├── main.py               # Main application entry point and UI logic
+├── json/
+│   ├── projects.json     # Database for projects
+│   └── users.json        # Database for users
+├── models/
+│   ├── project.py        # Project data model
+│   └── user.py           # User data model
+├── services/
+│   ├── auth_service.py   # Handles user authentication logic
+│   └── project_service.py# Handles project CRUD logic
+└── utils/
+    ├── file_handler.py   # Helper functions for reading/writing JSON files
+    └── validation.py     # Helper functions for input validation
