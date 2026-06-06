@@ -1,5 +1,4 @@
 # Python Crowd Funding Console App
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/mohammed-hamdi26/python-Crowd-Funding-console-app)
 
 ## About The Project
 
@@ -7,14 +6,14 @@ This is a simple, console-based application for managing crowd-funding projects.
 
 ## Features
 
-*   **User Authentication**: Securely register a new account and log in. User sessions are managed for the duration of the application's runtime.
-*   **Project Management**:
-    *   **Create**: Add new crowd-funding projects with a title, description, total target, start date, and end date.
-    *   **View**: Display a formatted list of all projects created by the currently logged-in user.
-    *   **Update**: Modify the details of an existing project.
-    *   **Delete**: Remove a project from the system.
-*   **Data Persistence**: All data is saved to and loaded from local `json` files, ensuring data is not lost between sessions.
-*   **Input Validation**: The application validates email formats and Egyptian mobile phone numbers upon registration to ensure data integrity.
+- **User Authentication**: Securely register a new account and log in. User sessions are managed for the duration of the application's runtime.
+- **Project Management**:
+  - **Create**: Add new crowd-funding projects with a title, description, total target, start date, and end date.
+  - **View**: Display a formatted list of all projects created by the currently logged-in user.
+  - **Update**: Modify the details of an existing project.
+  - **Delete**: Remove a project from the system.
+- **Data Persistence**: All data is saved to and loaded from local `json` files, ensuring data is not lost between sessions.
+- **Input Validation**: The application validates email formats and Egyptian mobile phone numbers upon registration to ensure data integrity.
 
 ## Getting Started
 
@@ -22,7 +21,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-*   Python 3.x installed on your system.
+- Python 3.x installed on your system.
 
 ### Installation & Usage
 
@@ -81,3 +80,4 @@ The codebase is organized to separate concerns, making it modular and easy to un
 └── utils/
     ├── file_handler.py   # Helper functions for reading/writing JSON files
     └── validation.py     # Helper functions for input validation
+```
